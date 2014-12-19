@@ -312,21 +312,3 @@ functionList[["SelectRecipientData"]] <- list(
 
 
 
-
-CheckElements <- function(){
-  
-  # List: function_list(function$input_elements = c(), $output_elements = c(), $xpath = c())
-  
-  
-  
-  
-  
-}
-
-GetValidElements <- function(){
-  
-  # Give user ability to access valid elements for a given function. Calls "CheckElements"
-  
-}
-
-
