@@ -1,5 +1,6 @@
 FetchFromFTP <- function(ftpURL, fileName, ftpUsername, ftpPassword, fileType,
                          dest = tempfile()) {
+  if (is.null(fileName)) {stop("NULL File Name")}
   
   ftpPath <- paste0(ftpURL, fileName)
   
@@ -13,8 +14,8 @@ FetchFromFTP <- function(ftpURL, fileName, ftpUsername, ftpPassword, fileType,
   writeBin(bin,dest)
   
   if (toupper(fileType)=="ZIP") {
-    return(read.csv(unzip(dest)))
+    return(read.csv(unzip(dest), stringsAsFactors=FALSE))
   } else if (toupper(fileType)=="CSV") {
-    return(read.csv(dest))
+    return(read.csv(dest, stringsAsFactors=FALSE))
   }
 }

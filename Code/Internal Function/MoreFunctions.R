@@ -1,6 +1,19 @@
 # Create Lookup List for Functions
 functionList <- list()
 
+functionList[["ExportTable"]] <- list(
+  inputElements   = c("TABLE_NAME"
+                      ,"TABLE_ID"
+                      ,"TABLE_VISIBILITY"
+                      ,"EMAIL"
+                      ,"EXPORT_FORMAT"
+                      ,"FILE_ENCODING"
+                      ,"ADD_TO_STORED_FILES"
+                      ,"DATE_START"
+                      ,"DATE_END")
+  ,xpath          = c("//RESULT")
+  ,xmlConfig      = "flat")
+
 functionList[["ExportList"]] <- list(
   inputElements   = c("LIST_ID"
                       ,"EMAIL"

@@ -44,11 +44,6 @@ GetMailingTemplates <- function(..., asXML = TRUE, asDF = TRUE){
   }
   
   if (asDF) {
-    if (xmlConfig == "flat") {
-      return(xmlToDF(doc, xpath))
-    }
-    if (xmlConfig == "nested") {
-      return(xmlToDFv2(doc, xpath))
-    }
+    return(xmlToDF(doc, xpath, xmlConfig))
   }
 }

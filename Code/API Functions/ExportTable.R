@@ -1,4 +1,4 @@
-GetAggregateTrackingForMailing <- function(..., asXML = TRUE, asDF = TRUE){
+ExportTable <- function(..., asXML = TRUE, asDF = TRUE){
   
   # Get Function Name
   functionName <- as.character(match.call()[[1]])
@@ -39,25 +39,7 @@ GetAggregateTrackingForMailing <- function(..., asXML = TRUE, asDF = TRUE){
   }
   
   # Function-specific Exceptions
-  if ("PER_CLICK" %in% suppliedElements) {
-    if (elements[grep("PER_CLICK",names(elements)
-                      ,ignore.case=TRUE,value=TRUE)] == TRUE) {
-      xpath <- "//Click"
-      xmlConfig <- "flat"
-    }
-  } else if ("TOP_DOMAIN" %in% suppliedElements) {
-    if (elements[grep("TOP_DOMAIN",names(elements)
-                      ,ignore.case=TRUE,value=TRUE)] == TRUE) {
-      xpath <- "//TopDomain"
-      xmlConfig <- "flat"
-    }
-  } else if ("INBOX_MONITORING" %in% suppliedElements) {
-    if (elements[grep("INBOX_MONITORING",names(elements)
-                      ,ignore.case=TRUE,value=TRUE)] == TRUE) {
-      xpath <- "//InboxMonitored"
-      xmlConfig <- "flat"
-    }
-  }
+  # --None--
   
   # Return Results
   if (asXML) {
